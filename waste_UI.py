@@ -86,7 +86,7 @@ if ok:
     Z['MONTH'] = mon_encoder.transform(Z['MONTH'])
     Z['TYPE'] = ty_encoder.transform(Z['TYPE'])
     Z[['YEAR']] = preprocessing.normalize(Z[['YEAR']])
-    Z = polynom.transform(Z)
+    Z = polynom.fit_transform(Z)
 
      #Predictions
     waste_total = model.predict(Z)
